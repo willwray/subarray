@@ -32,9 +32,9 @@ int main()
     constexpr auto C = subarray<-e>(a);
     // Two template param specify begin offset and explicit end as N|Nmax.
     constexpr auto D = subarray<0,e>(a);
-    constexpr auto E = subarray<0,LONG_MAX>(a);
+    constexpr auto E = subarray<0,ind_max>(a);
     constexpr auto F = subarray<-e,e>(a);
-    constexpr auto G = subarray<-e,LONG_MAX>(a);
+    constexpr auto G = subarray<-e,ind_max>(a);
 
     assert(A == B);
     assert(A == C);
@@ -50,9 +50,9 @@ int main()
     constexpr auto A = subarray<1>(a);
     constexpr auto B = subarray<1-e>(a);
     constexpr auto C = subarray<1,e>(a);
-    constexpr auto D = subarray<1,LONG_MAX>(a);
+    constexpr auto D = subarray<1,ind_max>(a);
     constexpr auto E = subarray<1-e,e>(a);
-    constexpr auto F = subarray<1-e,LONG_MAX>(a);
+    constexpr auto F = subarray<1-e,ind_max>(a);
 
     static_assert( std::size(A)+1 == e);
     static_assert( sget<0>(A) == '1');
