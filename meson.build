@@ -1,7 +1,7 @@
-project('subarray', 'cpp', default_options : 'cpp_std=c++1z')
+project('subarray', 'cpp', default_options : 'cpp_std=c++17')
 
 test('test subarray',
-  executable('test_subarray', 'test_subarray.cpp', cpp_args : '-fconcepts')
+  executable('test_subarray', 'test_subarray.cpp')
 )
 
 subarray_dep = declare_dependency(
