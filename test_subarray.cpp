@@ -6,7 +6,7 @@ int main()
     using namespace ltl;
 
     constexpr char a[]{'0','1','2','3'};
-    constexpr auto e = std::size(a);
+    constexpr long e {std::size(a)};
 
     static_assert( e == 4);
 
