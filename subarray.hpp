@@ -35,7 +35,6 @@ constexpr long ind(long I, unsigned long N)
 // subarray<b,e>(T[N]) -> std::array<T,e-b>
 template <long B=0, long E=ind_max, typename T, long N,
           long b=impl::ind(B,N), long e=impl::ind(E,N)>
-requires 0<=b && b<=e && e<=N
 constexpr
 auto
 subarray(T const (&a)[N])
@@ -48,8 +47,6 @@ subarray(T const (&a)[N])
 
 // sget<I>(T[N]) array sub-indexed get(), i.e. with signed index
 template <long I, typename T, size_t N>
-requires 0 <= impl::ind(I,N) &&
-              impl::ind(I,N) < N
 constexpr
 T
 sget(T const (&a)[N])
@@ -58,8 +55,6 @@ sget(T const (&a)[N])
 }
 
 template <long I, typename T, size_t N>
-requires 0 <= impl::ind(I,N) &&
-              impl::ind(I,N) < N
 constexpr
 T
 sget(std::array<T,N> const& a)
